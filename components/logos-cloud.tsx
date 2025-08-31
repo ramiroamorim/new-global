@@ -34,13 +34,13 @@ export function SpotlightLogoCloud() {
               "bg-clip-text text-transparent"
             )}
           >
-            Trusted by Industry Leaders
+            Ramiro Amorim 
           </h2>
         </Balancer>
       </div>
       <p className="text-center max-w-lg mx-auto text-base md:text-lg font-sans text-neutral-500 mt-4 mb-8 md:mb-10 px-4">
-        Join the ranks of forward-thinking companies already leveraging our AI
-        technology
+        Ele ira te auxiliar e te conduzir na melhor estrategia
+        seja escolhendo paises certos e na escala global
       </p>
       <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-6 md:gap-10 w-full max-w-3xl mx-auto relative px-4">
         {logos.map((logo, idx) => (
