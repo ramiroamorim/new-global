@@ -102,11 +102,11 @@ export function Hero() {
             blur={10}
           />
           <Image
-            src="/dashboard.webp"
+            src="/images/dash-utm-web.webp"
             alt="header"
             width={1920}
-            height={1080}
-            className="rounded-[20px]  h-auto object-cover  w-full"
+            height={2200}
+            className="rounded-[30px]  h-auto object-cover  w-full"
           />
           <div
             className="absolute inset-0 rounded-[20px]"
