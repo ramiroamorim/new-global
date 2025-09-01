@@ -102,7 +102,7 @@ export function Hero() {
             blur={10}
           />
           <Image
-            src="/images/dash-atual.webp"
+            src="/images/dash-panel.webp"
             alt="header"
             width={1920}
             height={2200}
