@@ -1,5 +1,4 @@
 "use client";
-
 import { cn } from "@/lib/utils";
 import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "motion/react";
@@ -8,15 +7,17 @@ import DottedMap from "dotted-map";
 import {
   IconBrandDiscord,
   IconBrandFacebook,
-  IconBrandGmail,
   IconBrandLinkedin,
-  IconBrandNotion,
   IconBrandReddit,
-  IconBrandSlack,
   IconBrandTwitch,
   IconBrandTwitter,
-  IconBrandX,
+  IconCode,
+  IconCurrencyEuro,
   IconBrandYoutube,
+  IconAi,
+  IconDeviceMobileDollar,
+  IconWorld,
+
 } from "@tabler/icons-react";
 import { GlowingEffect } from "./ui/glowing-effect";
 
@@ -96,11 +97,11 @@ export function Features() {
           </CardSkeletonBody>
           <CardContent className="h-40 relative mb-4">
             <CardTitle>
-              Major <br /> User Adoption
+              Poder <br /> Na Tela do computador
             </CardTitle>
             <CardDescription>
-              Join our growing community of over 500,000 users who trust our
-              platform for their crypto trading and investment needs.
+              Usando a IA e várias outras ferramentas de automação
+              que juntas nos dão um resultado contante e saudavel!
             </CardDescription>
           </CardContent>
           <div className="absolute right-4 bottom-4 opacity-10 md:opacity-100">
@@ -111,12 +112,11 @@ export function Features() {
         <Card className="flex flex-col justify-between lg:col-span-2">
           <CardContent className="h-40">
             <CardTitle>
-              People <br /> love us
+              Fora <br /> da caixa
             </CardTitle>
             <CardDescription>
-              See what our users are saying about their experience with our
-              platform and why they love using it. consequat elementum lacus et
-              bibendum.
+              Enquanto o seu "GURU" te ensina a apenas montar uma ofertinha 
+              e um criativo qualquer! Te ensino a criar uma marca e paginas como esta!
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
@@ -235,11 +235,11 @@ const IconsList = () => {
 
   const icons = useMemo(
     () => [
-      { Icon: IconBrandYoutube, delay: 0 },
-      { Icon: IconBrandSlack, delay: 0.1 },
-      { Icon: IconBrandX, delay: 0.2 },
-      { Icon: IconBrandGmail, delay: 0.3 },
-      { Icon: IconBrandNotion, delay: 0.4 },
+      { Icon: IconCurrencyEuro, delay: 0 },
+      { Icon: IconCode, delay: 0.1 },
+      { Icon: IconAi, delay: 0.2 },
+      { Icon: IconDeviceMobileDollar, delay: 0.3 },
+      { Icon: IconWorld, delay: 0.4 },
     ],
     []
   );
@@ -408,36 +408,34 @@ export const Highlight = ({
 const CARDS = [
   {
     id: 0,
-    name: "Manu Arora",
+    name: "Pedro Santos",
     content: (
       <p>
-        These cards are amazing, <Highlight>I want to use them</Highlight> in my
-        project. Framer motion is a godsend ngl tbh fam 🙏
+        Nunca vi este ensino, <Highlight>como o Ramiro mostra</Highlight> totalmente diferente
+        e fora da caixa, UM PRODUTO DE VERDADE...
       </p>
     ),
   },
   {
     id: 1,
-    name: "Elon Musk",
+    name: "Rodrigo Lima",
     content: (
       <p>
-        I dont like this Twitter thing,{" "}
-        <Highlight>deleting it right away</Highlight> because yolo. Instead, I
-        would like to call it <Highlight>X.com</Highlight> so that it can easily
-        be confused with adult sites.
+       Todo dia ficava na biblioteca,{" "}
+        <Highlight>e procurando o produto perfeito</Highlight> Mas o Ramiro me mostrou uma outra maneira e não é o que <Highlight>SIM COMO</Highlight> você vende todos
+        os dias e com constancia no trafego direto!
       </p>
     ),
   },
   {
     id: 2,
-    name: "Tyler Durden",
+    name: "Rafael Oliveira",
     content: (
       <p>
-        The first rule of
-        <Highlight>Fight Club</Highlight> is that you do not talk about fight
-        club. The second rule of
-        <Highlight>Fight club</Highlight> is that you DO NOT TALK about fight
-        club.
+        Primeiro desacreditei que a 
+        <Highlight>Raiz</Highlight> de como criar um produto nao e apenas
+        uma boa copy e pronto, mas tambem o sentimento de primeiro 
+        <Highlight>Impacto</Highlight> do Lead ao ver a sua oferta.
       </p>
     ),
   },
