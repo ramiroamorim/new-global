@@ -27,11 +27,11 @@ export const Navbar = () => {
       link: "/#home",
     },
     {
-      name: "Product",
+      name: "Produto",
       link: "/#product",
     },
     {
-      name: "Pricing",
+      name: "Preço",
       link: "/#pricing",
     },
   ];
@@ -162,7 +162,7 @@ const DesktopNav = ({ navItems, visible }: NavbarProps) => {
                 variant="primary"
                 className="hidden md:block rounded-full bg-white/20 hover:bg-white/30 text-white border-0"
               >
-                Get Started Now
+                Começar Agora
               </Button>
             </motion.div>
           )}

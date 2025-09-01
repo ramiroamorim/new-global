@@ -176,7 +176,7 @@ export default function CTA() {
           className="relative z-20"
         >
           <Button className="h-10 md:h-12 lg:h-16 w-32 md:w-40 lg:w-48 rounded-full text-xs sm:text-sm md:text-base font-medium">
-            Get Started Now
+            Aprender Mais
           </Button>
         </motion.div>
       </motion.div>

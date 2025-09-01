@@ -8,19 +8,19 @@ export function SpotlightLogoCloud() {
   const logos = [
     {
       name: "Aceternity UI",
-      src: "https://assets.aceternity.com/pro/logos/aceternity-ui.png",
+      src: "https://i.postimg.cc/X7W09Lkv/facebook-logo-15.png",
     },
     {
       name: "Gamity",
-      src: "https://assets.aceternity.com/pro/logos/gamity.png",
+      src: "https://i.postimg.cc/9XKpDXZP/instagram-logo-17.png",
     },
     {
       name: "Host it",
-      src: "https://assets.aceternity.com/pro/logos/hostit.png",
+      src: "https://i.postimg.cc/ydJRK9fM/hotmart-logo.png",
     },
     {
       name: "Asteroid Kit",
-      src: "https://assets.aceternity.com/pro/logos/asteroid-kit.png",
+      src: "https://i.postimg.cc/P5t8x03z/stripe-logo.png",
     },
   ];
 

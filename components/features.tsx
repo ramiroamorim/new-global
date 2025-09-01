@@ -33,12 +33,12 @@ export function Features() {
             "bg-clip-text text-transparent"
           )}
         >
-          Features & Benefits
+          Ganhos e benefícios
         </h2>
       </div>
       <p className="max-w-lg text-sm text-center mx-auto mt-4 text-neutral-400">
-        A maior oportunidade de vendas a nivel global com a melhor maquina 
-        de alto poder de escala -- Usando Facebook e Google!
+        A criacao de um negocio digital Real com entrega via aplicativo
+        e recorrencia de cada cliente que compra seu produto com pode de escala ainda maior
       </p>
       <div className="mt-20  grid cols-1 lg:grid-cols-5 gap-4 auto-rows-[25rem] max-w-3xl mx-auto lg:max-w-none">
         <Card className="flex flex-col relative justify-between lg:col-span-2">
@@ -47,23 +47,23 @@ export function Features() {
           </div>
           <CardContent className="h-40 absolute bottom-0">
             <CardTitle>
-              Hosting over
-              <br /> the edge
+              Sempre a frente
+              <br /> da concorrência
             </CardTitle>
             <CardDescription>
-              With our edge network, we host your website by going into each
-              city by ourselves.
+              Hoje no digital a concorrencia e baixa as pessoas querem fazer a pior entrega 
+              e obter maior ganho! Aqui nao ensino isso!
             </CardDescription>
           </CardContent>
         </Card>
         <Card className="flex relative flex-col justify-between lg:col-span-3">
           <CardContent className="h-40">
             <CardTitle>
-              Available in <br /> every country
+              Poder Real de escala <br /> No mundo todo
             </CardTitle>
             <CardDescription>
-              Access our platform from anywhere in the world with our globally
-              distributed network and localized support in multiple languages.
+              Com a maquina que temos hoje e automacao nos nossos funis de venda, podemos vender para qualquer lugar do mundo!
+              e sempre manter nosso clientes engajados e recorrentes!
             </CardDescription>
           </CardContent>
           <div className="absolute inset-0">
@@ -74,9 +74,9 @@ export function Features() {
               "inline-block p-6 text-2xl md:text-6xl bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#3B3B3B_0%,#888787_12.61%,#FFFFFF_50%,#888787_80%,#3B3B3B_100%)]  bg-clip-text text-transparent"
             )}
           >
-            100+
+            + 127
             <br />
-            Countries
+            Paises
           </h1>
         </Card>
         <Card className="flex flex-col relative justify-between lg:col-span-3">

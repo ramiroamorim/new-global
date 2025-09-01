@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { hostname: "assets.aceternity.com" },
       { hostname: "images.unsplash.com" },
+      { hostname: "i.postimg.cc" },
     ],
   },
 };

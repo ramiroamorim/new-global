@@ -8,9 +8,11 @@ import { Footer } from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "A maior oportunidade de vendas de infoprotudos",
+  title: "O Plano Global",
   description:
-    "Umas das maiores oportunidades que ja existiu de ganhar em multiplas moedas no conforto da sua casa",
+    "Umas das maiores oportunidades que ja existiu de ganhar em multiplas moedas no conforto da sua casa, usando Facebook e Google!",
+
+    
 };
 
 export default function RootLayout({

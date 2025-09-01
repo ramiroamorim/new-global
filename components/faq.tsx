@@ -8,27 +8,27 @@ const FAQs = [
   {
     question: "Preciso conhecer muito sobre vendas online?",
     answer:
-      "Nao precisa, voce apenas ira precisar ter um dispositivo com internet ",
+      "Não precisa, Você precisará apenas de um dispositivo com internet, pronto!",
   },
   {
-    question: "How does AI Assist use my data?",
+    question: "Preciso ter alguma documentação pra vender?",
     answer:
-      "Your data is handled with strict security measures. Any information used to prompt AI Assist is shared with our AI provider solely for generating responses. Data is automatically deleted within 48 hours of a request.",
+      "Apenas com seu RG ou CNH, voce ja pode fazer cadastro em uma plataforma de venda! Então faz o cadastro do produto e ja pode vender online ",
   },
   {
-    question: "How accurate are AI Assist's responses?",
+    question: "Em quanto tempo e a curva de aprendizagem?",
     answer:
-      "AI Assist strives for high accuracy by leveraging advanced AI models and continuous improvements. However, we recommend verifying critical information from multiple sources.",
+      "Isso varia bastante de acordo com a dedicação da pessoa, mas em apenas 1 mês voce ja entenderá a base sobre construir um bom produto e escalar a nivel global de forma tranquila",
   },
   {
-    question: "How much does AI Assist cost?",
+    question: "Quanto custa o tráfego?",
     answer:
-      "We offer flexible pricing plans to suit different needs. Contact our sales team for detailed pricing information.",
+      "O trafego e de acordo com o seu capital/ oferta, mesmo que voce tenha pouco caixa e conseguiu construir uma boa oferta com o conteudo voce investe e saca da plataforma e reinveste o lucro virando assim uma bola de neve lucrativa ",
   },
   {
-    question: "How do I get access to AI Assist?",
+    question: "Como funciona o Suporte?",
     answer:
-      "You can sign up for AI Assist through our website. We offer both individual and enterprise access options.",
+      "o Suporte direto comigo Ramiro Amorim no seu whatsapp na hora que precisar, e com o meu gestor de trafego em relacao a anuncios tambem",
   },
 ];
 export function FrequentlyAskedQuestions() {
