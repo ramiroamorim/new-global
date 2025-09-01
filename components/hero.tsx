@@ -56,7 +56,7 @@ export function Hero() {
               "bg-clip-text text-transparent"
             )}
           >
-            O Plano Global Escala de infoprodutos
+            O Plano Global e Escala de infoprodutos
           </motion.h2>
         </Balancer>
       </div>

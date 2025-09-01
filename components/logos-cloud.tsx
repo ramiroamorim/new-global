@@ -16,7 +16,7 @@ export function SpotlightLogoCloud() {
     },
     {
       name: "Host it",
-      src: "https://i.postimg.cc/x8JZtLZt/simbolo-hot-new.png",
+      src: "https://i.postimg.cc/vTRXzCwS/midnight.png",
     },
     {
       name: "Asteroid Kit",
