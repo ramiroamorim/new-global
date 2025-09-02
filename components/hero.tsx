@@ -12,6 +12,8 @@ import Balancer from "react-wrap-balancer";
 import Link from "next/link";
 import { Button } from "./button";
 import { GlowingEffect } from "./ui/glowing-effect";
+import { TypewriterEffect } from "./ui/typewriter-effect";
+
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(
@@ -55,7 +57,17 @@ export function Hero() {
             "bg-clip-text text-transparent"
           )}
         >
-          <Balancer>O Plano Global e Escala de infoprodutos</Balancer>
+          <Balancer>
+            O Plano Global para:
+            <br />
+            <TypewriterEffect
+              words={["Vender Global", "Escalar", "Criar sua marca", "Multi-moedas", "Roi 3X" , "Recorrência"]}
+              typingSpeed={120}
+              duration={1200}
+              deletingSpeed={80}
+              className="text-white whitespace-pre"
+            />
+          </Balancer>
         </motion.h2>
       </div>
       <motion.p
