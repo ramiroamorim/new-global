@@ -7,16 +7,21 @@ import DottedMap from "dotted-map";
 import {
   IconBrandDiscord,
   IconBrandFacebook,
-  IconBrandLinkedin,
   IconBrandReddit,
   IconBrandTwitch,
-  IconBrandTwitter,
   IconCode,
   IconCurrencyEuro,
-  IconBrandYoutube,
   IconAi,
   IconDeviceMobileDollar,
   IconWorld,
+  IconCurrencyBitcoin,
+  IconBrandMeta,
+  IconCreditCard,
+  IconCoin,
+
+
+
+
 
 } from "@tabler/icons-react";
 import { GlowingEffect } from "./ui/glowing-effect";
@@ -826,27 +831,27 @@ const OrbitingIcons = ({
 
 const LogoOrbit = () => {
   const orbit1Icons = [
-    <IconBrandTwitter
-      key="twitter"
+    <IconBrandMeta
+      key="meta"
       className="w-8 h-8 text-white dark:text-white"
     />,
     <IconBrandFacebook
       key="facebook"
       className="w-8 h-8 text-white dark:text-white"
     />,
-    <IconBrandLinkedin
-      key="linkedin"
+    <IconCreditCard
+      key="Card"
       className="w-8 h-8 text-white dark:text-white"
     />,
   ];
 
   const orbit2Icons = [
-    <IconBrandYoutube
-      key="youtube"
+    <IconCurrencyBitcoin
+      key="Bitcoin"
       className="w-6 h-6 text-white dark:text-white"
     />,
-    <IconBrandTwitch
-      key="twitch"
+    <IconCoin
+      key="Coin"
       className="w-6 h-6 text-white dark:text-white"
     />,
     <IconBrandReddit
