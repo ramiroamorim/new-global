@@ -116,7 +116,7 @@ export function Features() {
               Fora <br /> da caixa
             </CardTitle>
             <CardDescription>
-              Enquanto o seu "GURU" te ensina a apenas montar uma ofertinha 
+              Enquanto o seu GURU te ensina a apenas montar uma ofertinha 
               e um criativo qualquer! Te ensino a criar uma marca e paginas como esta!
             </CardDescription>
           </CardContent>
