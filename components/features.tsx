@@ -5,10 +5,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import DottedMap from "dotted-map";
 import {
-  IconBrandDiscord,
   IconBrandFacebook,
-  IconBrandReddit,
-  IconBrandTwitch,
   IconCode,
   IconCurrencyEuro,
   IconAi,
@@ -18,11 +15,10 @@ import {
   IconBrandMeta,
   IconCreditCard,
   IconCoin,
+  IconDeviceDesktopDollar,
+  IconRocket,
 
-
-
-
-
+  
 } from "@tabler/icons-react";
 import { GlowingEffect } from "./ui/glowing-effect";
 
@@ -854,11 +850,11 @@ const LogoOrbit = () => {
       key="Coin"
       className="w-6 h-6 text-white dark:text-white"
     />,
-    <IconBrandReddit
-      key="reddit"
+    <IconDeviceDesktopDollar
+      key="DektopDollar"
       className="w-6 h-6 text-white dark:text-white"
     />,
-    <IconBrandDiscord
+    <IconRocket
       key="discord"
       className="w-6 h-6 text-white dark:text-white"
     />,

@@ -317,7 +317,7 @@ export function Pricing() {
               "bg-clip-text text-transparent"
             )}
           >
-            Choose Your Plan
+            Entre para o plano
           </h2>
         </div>
         <p
@@ -326,8 +326,8 @@ export function Pricing() {
             isMobile ? "w-full" : "max-w-lg text-center mx-auto"
           )}
         >
-          Simplify crypto investing, trading, and portfolio management with
-          cutting-edge tools designed for everyone—from beginners to pros.
+          Entre agora e conheça o mercado de info produtos de uma maneira diferente e mais eficiente
+          criando um negocio de verdade e tendo liquidez e recorrência 
         </p>
         <div className="mx-auto mt-12 md:mt-20">
           <PricingList />

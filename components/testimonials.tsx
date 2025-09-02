@@ -18,12 +18,20 @@ export function Testimonials() {
                 "bg-clip-text text-transparent leading-tight"
               )}
             >
-              What they <br />
-              say about us
+              Quem será <br />
+              o seu mentor? 
+              <br />
+              <br /> Ramiro Amorim
             </h2>
             <p className="text-sm text-center lg:text-left mx-auto lg:mx-0 text-neutral-400 mt-6 max-w-sm">
-              Simplify crypto investing, trading, and portfolio management with
-              cutting-edge tools designed for everyone—from beginners to pros.
+              Seu Mentor se chama Ramiro Amorim ja faturou mais de 6 Milhões em 3 meses
+              com a internet e hoje ensina voce a criar uma marca dentro do digital e não apenas
+              um produto qualquer sem ter um branding ou algo de valor por traz, Depois de alguns anos usando 
+              a mesma estrategia que todos diziam percebeu que o mercado chegou em um platô.
+              Aonde as pessoas meio que cansaram de comprar produtos sem agregar real valor na vida delas
+              depois de 2 anos de mercado estudou mais possibilidades de como alcancar o publico e ter recorrência
+              então de tornou programador Frontend tambem assim melhorando não só as suas ofertas mas tambem o modelo de mostragem
+              e potencializando a escala e resultados 
             </p>
           </div>
         </div>
