@@ -39,30 +39,30 @@ export function Testimonials() {
         {/* Right Testimonials Section - 60% */}
         <div className="w-full grid gap-8 grid-cols-1 lg:grid-cols-2 md:w-[60%] mx-auto">
           <TestimonialCard
-            name="Sarah Johnson"
-            role="Crypto Investor"
+            name="Diego Rocha"
+            role="Rio de janeiro"
             image="/manu_arora.jpg"
-            quote="This platform has completely transformed how I manage my crypto investments. The tools are intuitive and powerful."
+            quote="Na call ele te passa um modelo de ação personalizado para o seu perfil e experinecia,e ai pega na sua mão até a escala"
           />
           <TestimonialCard
-            name="Michael Chen"
-            role="Day Trader"
+            name="Arthur Oliveita"
+            role="Belo Horizonte"
             image="/kishore_gunnam.jpg"
-            quote="The real-time analytics and portfolio tracking features have given me an edge in my trading decisions."
+            quote="2 meses de mentoria eu ja estou lucrando 4k por mês o que é 2x mais o que ganhava antes no meu emprego"
             className="lg:mt-[50px]"
           />
           <TestimonialCard
-            name="Emma Davis"
-            role="Beginner Investor"
+            name="Rosane Souza"
+            role="Bahia"
             image="/kishore_gunnam.jpg"
-            quote="As someone new to crypto, this platform made it easy to get started and learn the ropes."
+            quote="Eu ja estava no mercado a 4 meses mas o pessoal so ensinava a vender mentiras e mecanismos ultrapassados! Hoje realmente tenho um negócio digital e nem tenho vergonha de falar o que vendo abertamente "
             className="lg:mt-[-50px]"
           />
           <TestimonialCard
-            name="Emma Davis"
-            role="Beginner Investor"
+            name="Juan Senna"
+            role="São Paulo"
             image="/manu_arora.jpg"
-            quote="As someone new to crypto, this platform made it easy to get started and learn the ropes."
+            quote="O Ramiro me ajudou a meu infoproduto em cima da minha marca pessoal, sou personal trainer e hoje vendo não só para o brasil mas tambem pra Portugal e brasileiros fora do pais"
           />
         </div>
       </div>
