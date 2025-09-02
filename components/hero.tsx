@@ -40,25 +40,23 @@ export function Hero() {
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pt-20 md:px-8 md:pt-40 bg-black"
     >
       <div className="text-balance relative z-20 mx-auto mb-4 mt-4 max-w-4xl text-center text-4xl font-semibold tracking-tight text-neutral-300 md:text-7xl">
-        <Balancer>
-          <motion.h2
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            style={{
-              y: translateY,
-              scale,
-              filter: filterBlurPx,
-              opacity,
-            }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className={cn(
-              "inline-block bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#3B3B3B_0%,#888787_12.61%,#FFFFFF_50%,#888787_80%,#3B3B3B_100%)]",
-              "bg-clip-text text-transparent"
-            )}
-          >
-            O Plano Global e Escala de infoprodutos
-          </motion.h2>
-        </Balancer>
+        <motion.h2
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          style={{
+            y: translateY,
+            scale,
+            filter: filterBlurPx,
+            opacity,
+          }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className={cn(
+            "inline-block bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#3B3B3B_0%,#888787_12.61%,#FFFFFF_50%,#888787_80%,#3B3B3B_100%)]",
+            "bg-clip-text text-transparent"
+          )}
+        >
+          <Balancer>O Plano Global e Escala de infoprodutos</Balancer>
+        </motion.h2>
       </div>
       <motion.p
         initial={{ opacity: 0, y: 10 }}
