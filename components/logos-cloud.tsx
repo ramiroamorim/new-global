@@ -51,7 +51,7 @@ export function SpotlightLogoCloud() {
               alt={logo.name}
               width={300}
               height={300}
-              className="w-full max-w-[200px] object-contain select-none filter invert"
+              className="w-16 h-16 md:w-20 md:h-20 object-contain select-none filter invert"
               draggable={false}
             />
           </div>

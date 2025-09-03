@@ -39,8 +39,8 @@ export function Features() {
         </h2>
       </div>
       <p className="max-w-lg text-sm text-center mx-auto mt-4 text-neutral-400">
-        A criacao de um negocio digital Real com entrega via aplicativo
-        e recorrencia de cada cliente que compra seu produto com pode de escala ainda maior
+        A criacão de um negocio digital real com entrega via aplicativo
+        e recorrência de cada cliente que compra seu produto com pode de escala ainda maior
       </p>
       <div className="mt-20  grid cols-1 lg:grid-cols-5 gap-4 auto-rows-[25rem] max-w-3xl mx-auto lg:max-w-none">
         <Card className="flex flex-col relative justify-between lg:col-span-2">
@@ -53,15 +53,15 @@ export function Features() {
               <br /> da concorrência
             </CardTitle>
             <CardDescription>
-              Hoje no digital a concorrencia e baixa as pessoas querem fazer a pior entrega 
-              e obter maior ganho! Aqui nao ensino isso!
+              Hoje no digital a concorrência e baixa as pessoas querem fazer a pior entrega 
+              e obter maior ganho! Aqui não ensino isso!
             </CardDescription>
           </CardContent>
         </Card>
         <Card className="flex relative flex-col justify-between lg:col-span-3">
           <CardContent className="h-40">
             <CardTitle>
-              Poder Real de escala <br /> No mundo todo
+              Poder real de escala <br /> no mundo todo
             </CardTitle>
             <CardDescription>
               Com a maquina que temos hoje e automacao nos nossos funis de venda, podemos vender para qualquer lugar do mundo!
@@ -102,7 +102,7 @@ export function Features() {
             </CardTitle>
             <CardDescription>
               Usando a IA e várias outras ferramentas de automação
-              que juntas nos dão um resultado contante e saudavel!
+              que juntas nos dão um resultado constante e saudável!
             </CardDescription>
           </CardContent>
           <div className="absolute right-4 bottom-4 opacity-10 md:opacity-100">
@@ -117,7 +117,7 @@ export function Features() {
             </CardTitle>
             <CardDescription>
               Enquanto o seu GURU te ensina a apenas montar uma ofertinha 
-              e um criativo qualquer! Te ensino a criar uma marca e paginas como esta!
+              e um criativo qualquer! Te ensino a criar uma marca e páginas como esta!
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
@@ -434,7 +434,7 @@ const CARDS = [
     content: (
       <p>
         Primeiro desacreditei que a 
-        <Highlight>Raiz</Highlight> de como criar um produto nao e apenas
+        <Highlight>Raiz</Highlight> de como criar um produto não e apenas
         uma boa copy e pronto, mas tambem o sentimento de primeiro 
         <Highlight>Impacto</Highlight> do Lead ao ver a sua oferta.
       </p>
@@ -693,8 +693,8 @@ const OrbitingIcons = ({
       const angles = Array.from({ length: iconCount }, (_, i) => angleStep * i);
 
       // Precalculate positions and animations for each icon
-      const iconData = angles.map((angle) => {
-        const randomDelay = -Math.random() * speed;
+      const iconData = angles.map((angle, index) => {
+        const randomDelay = -(index * 0.3) * speed;
         const rotationAngle =
           orbit.rotationDirection === "clockwise"
             ? [angle, angle - 360]
@@ -898,12 +898,24 @@ const MapView = () => {
     const points = [];
     const numPoints = 8;
 
+    const fixedPositions = [
+      { x: 72.03, y: 69.29, duration: 2.5 },
+      { x: 36.07, y: 75.32, duration: 2.8 },
+      { x: 83.99, y: 68.04, duration: 2.2 },
+      { x: 24.25, y: 44.39, duration: 2.7 },
+      { x: 71.08, y: 33.55, duration: 2.4 },
+      { x: 57.61, y: 23.42, duration: 2.9 },
+      { x: 54.90, y: 66.07, duration: 2.3 },
+      { x: 56.63, y: 50.87, duration: 2.6 }
+    ];
+    
     for (let i = 0; i < numPoints; i++) {
+      const pos = fixedPositions[i % fixedPositions.length];
       points.push({
-        x: 15 + Math.random() * 70,
-        y: 15 + Math.random() * 70,
+        x: pos.x,
+        y: pos.y,
         delay: (i / numPoints) * 3,
-        duration: 2 + Math.random(),
+        duration: pos.duration,
       });
     }
     return points;

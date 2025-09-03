@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { ThemeProvider } from "next-themes";
 import Script from "next/script";
 
 
@@ -27,9 +28,7 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
      {/* Meta Pixel Code */}
-     
-     id='facebook-pixel'
-     <Script id="4130621700509395">
+     <Script id="facebook-pixel">
       {`
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -46,9 +45,11 @@ export default function RootLayout({
      </Script>
       </head>
       <body className={cn("antialiased bg-black", inter.className)}>
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

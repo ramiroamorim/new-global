@@ -58,10 +58,10 @@ export function Hero() {
           )}
         >
           <Balancer>
-            O Plano Global para:
+            O Plano Global para
             <br />
             <TypewriterEffect
-              words={["Vender Global", "Escalar", "Criar sua marca", "Multi-moedas", "Roi 3X" , "Recorrência"]}
+              words={["Vender Global", "Escalar", "Criar sua marca", "Multimoedas", "Roi 3X" , "Recorrência"]}
               typingSpeed={120}
               duration={1200}
               deletingSpeed={80}
