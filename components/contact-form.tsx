@@ -314,10 +314,10 @@ export const Grid = ({
   pattern,
   size,
 }: {
-  pattern?: number[][];
+  pattern?: Array<[number, number]>;
   size?: number;
 }) => {
-  const p = pattern ?? [
+  const p: Array<[number, number]> = pattern ?? [
     [10, 3],
     [8, 5],
     [9, 2],
@@ -340,7 +340,22 @@ export const Grid = ({
   );
 };
 
-export function GridPattern({ width, height, x, y, squares, ...props }: any) {
+export function GridPattern({ 
+  width = 20, 
+  height = 20, 
+  x = "0", 
+  y = "0", 
+  squares, 
+  ...props 
+}: {
+  width?: number;
+  height?: number;
+  x?: string | number;
+  y?: string | number;
+  squares?: Array<[number, number]>;
+  className?: string;
+  [key: string]: any;
+}) {
   const patternId = useId();
 
   return (
@@ -363,16 +378,16 @@ export function GridPattern({ width, height, x, y, squares, ...props }: any) {
         strokeWidth={0}
         fill={`url(#${patternId})`}
       />
-      {squares && (
+      {squares && squares.length > 0 && (
         <svg x={x} y={y} className="overflow-visible">
-          {squares.map(([x, y]: any, idx: number) => (
+          {squares.map(([squareX, squareY]: [number, number], idx: number) => (
             <rect
               strokeWidth="0"
-              key={`${x}-${y}-${idx}`}
-              width={width + 1}
-              height={height + 1}
-              x={x * width}
-              y={y * height}
+              key={`${squareX}-${squareY}-${idx}`}
+              width={(width || 20) + 1}
+              height={(height || 20) + 1}
+              x={squareX * (width || 20)}
+              y={squareY * (height || 20)}
             />
           ))}
         </svg>

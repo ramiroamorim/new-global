@@ -19,15 +19,27 @@ export interface ConversionData {
     currency?: string;
     contentName?: string;
     contentCategory?: string;
-    [key: string]: any;
+    [key: string]: unknown; // ✅ Mudança aqui
   };
   eventSourceUrl?: string;
   actionSource: 'website' | 'email' | 'phone_call' | 'chat' | 'system_generated';
 }
 
+// Interface para dados hashados do usuário
+interface HashedUserData {
+  em?: string[];
+  ph?: string[];
+  fn?: string[];
+  ln?: string[];
+  ct?: string[];
+  st?: string[];
+  country?: string[];
+  zp?: string[];
+}
+
 // Função para hash dos dados do usuário (required pelo Facebook)
-function hashUserData(userData: ConversionData['userData']) {
-  const hashedData: any = {};
+function hashUserData(userData: ConversionData['userData']): HashedUserData {
+  const hashedData: HashedUserData = {}; // ✅ Mudança aqui
   
   if (userData.email) {
     hashedData.em = [crypto.createHash('sha256').update(userData.email.toLowerCase().trim()).digest('hex')];
@@ -66,8 +78,20 @@ function hashUserData(userData: ConversionData['userData']) {
   return hashedData;
 }
 
+// Interface para resposta da API do Facebook
+interface FacebookApiResponse {
+  events_received?: number;
+  messages?: string[];
+  fbtrace_id?: string;
+  error?: {
+    message: string;
+    type: string;
+    code: number;
+  };
+}
+
 // Função principal para enviar conversões
-export async function sendConversion(data: ConversionData) {
+export async function sendConversion(data: ConversionData): Promise<FacebookApiResponse> {
   try {
     const pixelId = process.env.FACEBOOK_PIXEL_ID;
     const accessToken = process.env.FACEBOOK_ACCESS_TOKEN;
@@ -99,7 +123,7 @@ export async function sendConversion(data: ConversionData) {
       body: JSON.stringify(conversionPayload),
     });
     
-    const result = await response.json();
+    const result: FacebookApiResponse = await response.json(); // ✅ Mudança aqui
     
     if (!response.ok) {
       console.error('Erro ao enviar conversão:', result);
@@ -118,7 +142,7 @@ export async function sendConversion(data: ConversionData) {
 // Função helper para eventos comuns
 export const FacebookEvents = {
   // Evento de visualização de página
-  pageView: (userData: ConversionData['userData'], url?: string) => ({
+  pageView: (userData: ConversionData['userData'], url?: string): Omit<ConversionData, 'eventTime'> & { eventTime: number } => ({
     eventName: 'PageView',
     eventTime: Math.floor(Date.now() / 1000),
     userData,
@@ -127,7 +151,7 @@ export const FacebookEvents = {
   }),
   
   // Evento de lead (formulário preenchido)
-  lead: (userData: ConversionData['userData'], value?: number) => ({
+  lead: (userData: ConversionData['userData'], value?: number): Omit<ConversionData, 'eventTime'> & { eventTime: number } => ({
     eventName: 'Lead',
     eventTime: Math.floor(Date.now() / 1000),
     userData,
@@ -137,7 +161,7 @@ export const FacebookEvents = {
   }),
   
   // Evento de compra
-  purchase: (userData: ConversionData['userData'], value: number, currency = 'BRL') => ({
+  purchase: (userData: ConversionData['userData'], value: number, currency = 'BRL'): Omit<ConversionData, 'eventTime'> & { eventTime: number } => ({
     eventName: 'Purchase',
     eventTime: Math.floor(Date.now() / 1000),
     userData,
@@ -147,7 +171,7 @@ export const FacebookEvents = {
   }),
   
   // Evento de iniciar checkout
-  initiateCheckout: (userData: ConversionData['userData'], value?: number) => ({
+  initiateCheckout: (userData: ConversionData['userData'], value?: number): Omit<ConversionData, 'eventTime'> & { eventTime: number } => ({
     eventName: 'InitiateCheckout',
     eventTime: Math.floor(Date.now() / 1000),
     userData,
