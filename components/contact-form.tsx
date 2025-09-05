@@ -1,12 +1,81 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { IconMailFilled } from "@tabler/icons-react";
 import { useId } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { motion } from "motion/react";
+import Cookies from "js-cookie";
 
 export function ContactFormGridWithDetails() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      // Capturar cookies do Facebook
+      const fbp = Cookies.get('_fbp');
+      const fbc = Cookies.get('_fbc');
+      
+      // Preparar dados para enviar ao Facebook
+      const eventData = {
+        eventName: 'Lead' as const,
+        email: formData.email,
+        value: 10, // Valor estimado de um lead
+        currency: 'BRL',
+        productName: 'Contato - Infoprodutos Global',
+        category: 'lead_generation',
+        fbp,
+        fbc,
+        userAgent: navigator.userAgent
+      };
+
+      console.log('🚀 Enviando dados para Facebook:', eventData);
+
+      // Enviar para API do Facebook
+      const response = await fetch('/api/conversions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(eventData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', company: '', message: '' });
+        console.log('✅ Conversão enviada com sucesso para Facebook!');
+      } else {
+        setSubmitStatus('error');
+        console.error('❌ Erro ao enviar conversão:', result.error);
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      console.error('💥 Erro ao enviar formulário:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 py-10 md:px-6 md:py-20 lg:grid-cols-2">
       <div className="relative flex flex-col items-center overflow-hidden lg:items-start">
@@ -50,8 +119,21 @@ export function ContactFormGridWithDetails() {
           />
         </div>
       </div>
-      <div className="relative mx-auto flex w-full max-w-2xl flex-col items-start gap-4 overflow-hidden rounded-3xl bg-gradient-to-b from-gray-100 to-gray-200 p-4 sm:p-10 dark:from-neutral-900 dark:to-neutral-950">
+      <form onSubmit={handleSubmit} className="relative mx-auto flex w-full max-w-2xl flex-col items-start gap-4 overflow-hidden rounded-3xl bg-gradient-to-b from-gray-100 to-gray-200 p-4 sm:p-10 dark:from-neutral-900 dark:to-neutral-950">
         <Grid size={20} />
+        
+        {submitStatus === 'success' && (
+          <div className="relative z-20 w-full p-4 rounded-md bg-green-100 border border-green-300 text-green-700 dark:bg-green-900/30 dark:border-green-700 dark:text-green-300">
+            ✅ Mensagem enviada com sucesso! Seus dados foram enviados para o Facebook para remarketing.
+          </div>
+        )}
+        
+        {submitStatus === 'error' && (
+          <div className="relative z-20 w-full p-4 rounded-md bg-red-100 border border-red-300 text-red-700 dark:bg-red-900/30 dark:border-red-700 dark:text-red-300">
+            ❌ Erro ao enviar mensagem. Tente novamente.
+          </div>
+        )}
+        
         <div className="relative z-20 mb-4 w-full">
           <label
             className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
@@ -61,8 +143,12 @@ export function ContactFormGridWithDetails() {
           </label>
           <input
             id="name"
+            name="name"
             type="text"
+            value={formData.name}
+            onChange={handleInputChange}
             placeholder="Ramiro Amorim"
+            required
             className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white"
           />
         </div>
@@ -71,12 +157,16 @@ export function ContactFormGridWithDetails() {
             className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
             htmlFor="email"
           >
-            Email Address
+            Email Address *
           </label>
           <input
             id="email"
+            name="email"
             type="email"
+            value={formData.email}
+            onChange={handleInputChange}
             placeholder="Contato@ramiroglobal.com"
+            required
             className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white"
           />
         </div>
@@ -89,7 +179,10 @@ export function ContactFormGridWithDetails() {
           </label>
           <input
             id="company"
+            name="company"
             type="text"
+            value={formData.company}
+            onChange={handleInputChange}
             placeholder="RG Digital & Software LTDA"
             className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white"
           />
@@ -103,15 +196,22 @@ export function ContactFormGridWithDetails() {
           </label>
           <textarea
             id="message"
+            name="message"
             rows={5}
+            value={formData.message}
+            onChange={handleInputChange}
             placeholder="Type your message here"
             className="shadow-input w-full rounded-md border border-transparent bg-white pt-4 pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white"
           />
         </div>
-        <button className="relative z-10 flex items-center justify-center rounded-md border border-transparent bg-neutral-800 px-4 py-2 text-sm font-medium text-white shadow-[0px_1px_0px_0px_#FFFFFF20_inset] transition duration-200 hover:bg-neutral-900 md:text-sm">
-          Submit
+        <button 
+          type="submit"
+          disabled={isSubmitting}
+          className="relative z-10 flex items-center justify-center rounded-md border border-transparent bg-neutral-800 px-4 py-2 text-sm font-medium text-white shadow-[0px_1px_0px_0px_#FFFFFF20_inset] transition duration-200 hover:bg-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed md:text-sm"
+        >
+          {isSubmitting ? 'Enviando...' : 'Submit'}
         </button>
-      </div>
+      </form>
     </div>
   );
 }
