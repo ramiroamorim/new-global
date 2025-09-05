@@ -7,6 +7,10 @@ const pixelId: string = process.env.FACEBOOK_PIXEL_ID || '';
 
 const api = bizSdk.FacebookAdsApi.init(accessToken);
 
+
+
+let current_timestamp = Math.floor(Date.now() / 1000);
+
 export async function sendConversion(eventData: EventData): Promise<ConversionResponse> {
   const { ServerEvent, EventRequest, UserData, CustomData } = bizSdk;
   
