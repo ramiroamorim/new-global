@@ -66,11 +66,11 @@ export function ContactFormGridWithDetails() {
         console.log('✅ Conversão enviada com sucesso para Facebook!');
       } else {
         setSubmitStatus('error');
-        console.error('❌ Erro ao enviar conversão:', result.error);
+        console.error(' Erro ao enviar conversão:', result.error);
       }
     } catch (error) {
       setSubmitStatus('error');
-      console.error('💥 Erro ao enviar formulário:', error);
+      console.error(' Erro ao enviar formulário:', error);
     } finally {
       setIsSubmitting(false);
     }
