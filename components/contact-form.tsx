@@ -124,7 +124,7 @@ export function ContactFormGridWithDetails() {
         
         {submitStatus === 'success' && (
           <div className="relative z-20 w-full p-4 rounded-md bg-green-100 border border-green-300 text-green-700 dark:bg-green-900/30 dark:border-green-700 dark:text-green-300">
-            ✅ Mensagem enviada com sucesso! Seus dados foram enviados para o Facebook para remarketing.
+            ✅ Mensagem enviada com sucesso! Minha Equipe irá te chamar no WhatsApp
           </div>
         )}
         
@@ -139,7 +139,7 @@ export function ContactFormGridWithDetails() {
             className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
             htmlFor="name"
           >
-            Full name
+            Nome
           </label>
           <input
             id="name"
@@ -147,7 +147,7 @@ export function ContactFormGridWithDetails() {
             type="text"
             value={formData.name}
             onChange={handleInputChange}
-            placeholder="Ramiro Amorim"
+            placeholder="Seu Nome"
             required
             className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white"
           />
@@ -157,7 +157,7 @@ export function ContactFormGridWithDetails() {
             className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
             htmlFor="email"
           >
-            Email Address *
+            E-mail
           </label>
           <input
             id="email"
@@ -165,7 +165,7 @@ export function ContactFormGridWithDetails() {
             type="email"
             value={formData.email}
             onChange={handleInputChange}
-            placeholder="Contato@ramiroglobal.com"
+            placeholder="Seu Email"
             required
             className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white"
           />
