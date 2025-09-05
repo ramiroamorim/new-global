@@ -28,6 +28,26 @@ export async function sendConversion(eventData: EventData): Promise<ConversionRe
       userData.setPhone(cleanPhone);
     }
     
+    // NEW TRACKING FIELDS ABOUT THE COOKIES
+    if (eventData.fbp) {
+      userData.setFbp(eventData.fbp);
+    }
+    if (eventData.fbc) {
+      userData.setFbc(eventData.fbc);
+    }
+    if (eventData.userAgent) {
+      userData.setClientUserAgent(eventData.userAgent);
+    }
+    
+    // NEW FIELD ABOUT THE COOKIES 
+
+    if (eventData.ipAddress) {
+      userData.setClientIpAddress(eventData.ipAddress);
+    }
+
+    
+    
+    
     serverEvent.setUserData(userData);
     
     if (eventData.value && eventData.value > 0) {
@@ -47,9 +67,11 @@ export async function sendConversion(eventData: EventData): Promise<ConversionRe
     
     const response = await eventRequest.execute();
     
-    console.log('✅ Event sent successfully:', {
+    console.log('✅ Event sent with tracking data:', {
       event: eventData.eventName,
       value: eventData.value,
+      fbp: eventData.fbp ? 'present' : 'missing',
+      fbc: eventData.fbc ? 'present' : 'missing',
       timestamp: new Date().toISOString()
     });
     

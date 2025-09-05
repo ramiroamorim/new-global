@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getTrackingData } from '../lib/trackingUtils';
 
 export default function TestConversion() {
   const [result, setResult] = useState<any>(null);
@@ -7,6 +8,9 @@ export default function TestConversion() {
   const testConversion = async () => {
     setLoading(true);
     try {
+      // Get tracking data (creates cookies if needed)
+      const trackingData = getTrackingData();
+      
       const response = await fetch('/api/conversions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -15,7 +19,11 @@ export default function TestConversion() {
           email: 'test@example.com',
           value: 99.99,
           currency: 'BRL',
-          productName: 'Test Product'
+          productName: 'Test Product',
+          // Include tracking data
+          fbp: trackingData.fbp,
+          fbc: trackingData.fbc,
+          userAgent: trackingData.clientUserAgent
         })
       });
       
@@ -32,7 +40,7 @@ export default function TestConversion() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>bora ver se da bom a api</h1>
+      <h1>Test Facebook Conversions API with Cookies</h1>
       
       <button onClick={testConversion} disabled={loading}>
         {loading ? 'Sending...' : 'Send Test Conversion'}
@@ -43,6 +51,11 @@ export default function TestConversion() {
           {JSON.stringify(result, null, 2)}
         </pre>
       )}
+      
+      <div style={{ marginTop: '20px', fontSize: '12px', color: '#666' }}>
+        <p>This will create Facebook tracking cookies (_fbp) on your browser</p>
+        <p>Check your browser dev tools → Application → Cookies to see them</p>
+      </div>
     </div>
   );
 }

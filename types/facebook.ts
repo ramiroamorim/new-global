@@ -7,6 +7,13 @@ export interface EventData {
     currency?: string;
     productName?: string;
     category?: string;
+
+    // new tracking field about the cookies 
+    fbp?: string;
+    fbc?: string;
+    userAgent?: string;
+    ipAddress?: string;
+    
   }
   
   export interface ConversionResponse {
